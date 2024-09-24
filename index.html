@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ginjal App Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar-back sidebar sidebar-dark accordion" id="accordionSidebar">
+
+          <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-start" href="index.html">
+            <div class="sidebar-brand-icon">
+                <!-- Replace this icon with your logo image -->
+                <img src="img/logo.png" alt="Logo">
+            </div>
+        </a>
+
+
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item" data-page="index.html">
+            <a class="nav-link" href="index.html">
+                <i class="icon fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item" data-page="rumah-sakit.html">
+            <a class="nav-link" href="rumah-sakit.html">
+                <i class="icon fas fa-hospital fa-2x"></i>
+                <span>Rumah Sakit</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item" data-page="pasien.html">
+            <a class="nav-link" href="pasien.html">
+                <i class="icon fas fa-user-injured"></i>
+                <span>Pasien</span>
+            </a>
+        </li>
+
+        <li class="nav-item" data-page="hemodialisa.html">
+            <a class="nav-link" href="hemodialisa.html">
+                <i class="icon fas fa-chart-bar"></i>
+                <span>Hemodialisa</span>
+            </a>
+        </li>
+
+        <li class="nav-item" data-page="pasien-hemodialisa.html">
+            <a class="nav-link" href="pasien-hemodialisa.html">
+                <i class="icon fas fa-heart"></i>
+                <span>Pasien Hemodialisa</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <li class="nav-item" data-page="logout">
+            <a class="nav-link" href="index.html">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Keluar</span>
+            </a>
+        </li>
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content mt-4">
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 style="font-weight: 700; color:black" class="h2 mt-4 mb-0">Dashboard</h1>
+                          <!-- Nav Item - Alerts -->
+                          <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+                    </div>
+
+                    
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h3 style="color: black;" class="m-0 font-weight-bold">Daftar Pasien</h3>
+                                    
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table" id="dataTable" width="100%" cellspacing="0">
+                                            <thead class="sidebar-back text-white">
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Nama Pengguna</th>
+                                                    <th>Berat Badan</th>
+                                                    <th>Makan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Garrett Winters</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Ashton Cox</td>
+                                                    <td>Junior Technical Author</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Cedric Kelly</td>
+                                                    <td>Senior Javascript Developer</td>
+                                                    <td>Edinburgh</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Airi Satou</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Brenden Wagner</td>
+                                                    <td>Software Engineer</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Fiona Green</td>
+                                                    <td>Chief Operating Officer (COO)</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Shou Itou</td>
+                                                    <td>Regional Marketing</td>
+                                                    <td>Tokyo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Michelle House</td>
+                                                    <td>Integration Specialist</td>
+                                                    <td>Sidney</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Suki Burks</td>
+                                                    <td>Developer</td>
+                                                    <td>London</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Prescott Bartlett</td>
+                                                    <td>Technical Author</td>
+                                                    <td>London</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Gavin Cortez</td>
+                                                    <td>Team Leader</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Martena Mccray</td>
+                                                    <td>Post-Sales support</td>
+                                                    <td>Edinburgh</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Unity Butler</td>
+                                                    <td>Marketing Designer</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Howard Hatfield</td>
+                                                    <td>Office Manager</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Hope Fuentes</td>
+                                                    <td>Secretary</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Vivian Harrell</td>
+                                                    <td>Financial Controller</td>
+                                                    <td>San Francisco</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Timothy Mooney</td>
+                                                    <td>Office Manager</td>
+                                                    <td>London</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Jackson Bradshaw</td>
+                                                    <td>Director</td>
+                                                    <td>New York</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Olivia Liang</td>
+                                                    <td>Support Engineer</td>
+                                                    <td>Singapore</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Bruno Nash</td>
+                                                    <td>Software Engineer</td>
+                                                    <td>London</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Sakura Yamamoto</td>
+                                                    <td>Support Engineer</td>
+                                                    <td>Tokyo</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="col-lg-4">
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h5 style="color: black;" class="m-0 font-weight-bold">Kebutuhan Makan Hari ini</h5>
+                                </div>
+                                <div class="card-body" id="nutrition-list">
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                        </div> -->
+                    </div>
+
+            </div>
+            <!-- End of Main Content -->
+
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+   
+
+
+    <script>
+       
+        const nutritionData = [
+            { name: 'Kalori', value: '200 kkal' },
+            { name: 'Cairan', value: '2 L' },
+            { name: 'Protein', value: '50 g' },
+            { name: 'Natrium', value: '1500 mg' },
+            { name: 'Kalium', value: '4700 mg' }
+        ];
+    
+      
+        const nutritionList = document.getElementById('nutrition-list');
+    
+        
+        nutritionData.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'd-flex justify-content-between p-3 mb-3';
+            div.style.backgroundColor = '#F3CA52'; 
+            div.style.borderRadius = '10px'; 
+            div.style.fontSize = '16px';  
+            div.style.fontWeight = 'bold';
+            div.style.color = 'black';
+            div.style.fontWeight = '900';
+    
+            div.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
+            
+            
+            nutritionList.appendChild(div);
+        });
+    </script>
+
+
+    <!-- active sidebar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    
+            var currentPage = window.location.pathname.split("/").pop();
+
+            if (currentPage === "" || currentPage === "index.html") {
+                currentPage = "index.html";
+            }
+
+
+            var sidebarItems = document.querySelectorAll('#accordionSidebar .nav-item');
+            sidebarItems.forEach(function(item) {
+                if (item.dataset.page === currentPage) {
+                    item.classList.add('sidebar-active');
+                    var link = item.querySelector('.nav-link');
+                    if (link) {
+                        link.style.backgroundColor = '#F3CA52';
+                        link.style.padding = '10px';
+                        link.style.borderRadius = '8px';
+                        link.style.fontWeight = '800';
+                        link.style.color = '#0A6847';
+                    }
+                } else {
+                    item.classList.remove('sidebar-active');
+                    var link = item.querySelector('.nav-link');
+                    if (link) {
+                        link.style.backgroundColor = '';
+                        link.style.borderRadius = '';
+                        link.style.color = ''; 
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+</body>
+
+</html>

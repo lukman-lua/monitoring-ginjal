@@ -1,0 +1,40 @@
+.sidebar-back{
+    background-color: #0A6847;
+}
+
+/* card makanan dan minuman hari ini (Hemodialisa Page)*/
+.food-item {
+    border-bottom: 1px solid #eee;
+}
+.food-item:last-child {
+    border-bottom: none;
+}
+.nutrition-info {
+    color: #2e8b57;
+    font-size: 0.9rem;
+}
+
+/* Hasil Analisis (Hemodialisa Page) */
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.badge-custom {
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.bg-light-green {
+    background-color: #d4edda;
+}
+.bg-light-yellow {
+    background-color: #fff3cd;
+}
+
+/* sidebar active */
+.sidebar-active {
+    background-color: #F3CA52;
+    border-radius: 8px;
+}
