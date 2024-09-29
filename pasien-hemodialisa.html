@@ -346,6 +346,15 @@
 
 
     <script>
+
+        // Ambil URL saat ini
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Ambil nilai parameter
+        const param1 = urlParams.get('username');
+
+        console.log('Param 1:', param1);
+
  
         const nutritionData = [
             { name: 'Kalori', value: '200 kkal' },

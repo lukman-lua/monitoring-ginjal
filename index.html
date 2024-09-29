@@ -182,148 +182,24 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="table-responsive">
+                                        <div class="form-group">
+                                            <label for="daySelect">Pilih Hari:</label>
+                                            <select class="form-control" id="daySelect">
+                                                <option value="1">Day 1</option>
+                                                <option value="2">Day 2</option>
+                                                <option value="3">Day 3</option>
+                                            </select>
+                                        </div>
+                                        
                                         <table class="table" id="dataTable" width="100%" cellspacing="0">
                                             <thead class="sidebar-back text-white">
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Pengguna</th>
-                                                    <th>Berat Badan</th>
-                                                    <th>Makan</th>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>Edinburgh</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Ashton Cox</td>
-                                                    <td>Junior Technical Author</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Cedric Kelly</td>
-                                                    <td>Senior Javascript Developer</td>
-                                                    <td>Edinburgh</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Airi Satou</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Brenden Wagner</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Fiona Green</td>
-                                                    <td>Chief Operating Officer (COO)</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Shou Itou</td>
-                                                    <td>Regional Marketing</td>
-                                                    <td>Tokyo</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Michelle House</td>
-                                                    <td>Integration Specialist</td>
-                                                    <td>Sidney</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Suki Burks</td>
-                                                    <td>Developer</td>
-                                                    <td>London</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Prescott Bartlett</td>
-                                                    <td>Technical Author</td>
-                                                    <td>London</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Gavin Cortez</td>
-                                                    <td>Team Leader</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Martena Mccray</td>
-                                                    <td>Post-Sales support</td>
-                                                    <td>Edinburgh</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Unity Butler</td>
-                                                    <td>Marketing Designer</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Howard Hatfield</td>
-                                                    <td>Office Manager</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Hope Fuentes</td>
-                                                    <td>Secretary</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Vivian Harrell</td>
-                                                    <td>Financial Controller</td>
-                                                    <td>San Francisco</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Timothy Mooney</td>
-                                                    <td>Office Manager</td>
-                                                    <td>London</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Jackson Bradshaw</td>
-                                                    <td>Director</td>
-                                                    <td>New York</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Olivia Liang</td>
-                                                    <td>Support Engineer</td>
-                                                    <td>Singapore</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Bruno Nash</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>London</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Sakura Yamamoto</td>
-                                                    <td>Support Engineer</td>
-                                                    <td>Tokyo</td>
-                                                </tr>
+                                            </thead >
+                                            <tbody id="pasien">
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -366,6 +242,62 @@
 
 
     <script>
+
+        const pasienData = [
+            { name: 'pasien1', weight: '-' },
+        ];
+
+
+        const pasienList = document.getElementById('pasien');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchPasienData();
+        });
+
+        async function fetchPasienData() {
+
+            try {
+                const date =req.params.date;
+                const response = await fetch('http://localhost:3000/api/user/all');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const responseData = await response.json();
+                displayPasienData(responseData.data); // Accessing the 'data' array
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+        function displayPasienData(data) {
+            if (!Array.isArray(data)) {
+                console.error('Expected data to be an array but received:', data);
+                return;
+            }
+
+            let i = 0;
+            pasienList.innerHTML = '';
+            data.forEach(item => {
+                i++;
+                const row = document.createElement('tr');
+                row.addEventListener('click', () => {
+                    const params = new URLSearchParams({
+                        username: item.name,
+                        day:
+                    }).toString();
+
+                    window.open(`pasien-hemodialisa.html?${params}`, '_blank');
+                });
+                row.style.cursor = "pointer";
+                row.innerHTML = `
+                    <td>${i}</td>
+                    <td>${item.name}</td>
+                `;
+                pasienList.appendChild(row);
+            });
+        }
+
+        
        
         const nutritionData = [
             { name: 'Kalori', value: '200 kkal' },
@@ -390,8 +322,6 @@
             div.style.fontWeight = '900';
     
             div.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
-            
-            
             nutritionList.appendChild(div);
         });
     </script>
